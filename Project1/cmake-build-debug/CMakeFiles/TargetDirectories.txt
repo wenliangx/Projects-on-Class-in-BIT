@@ -1,0 +1,5 @@
+D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/Project1.dir
+D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/Project1_autogen_timestamp_deps.dir
+D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/Project1_autogen.dir

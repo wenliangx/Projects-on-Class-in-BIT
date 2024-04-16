@@ -26,10 +26,12 @@ typedef struct {
  * @brief 玩家信息
  * @param id 玩家ID,用大于0小于0区分就行
  * @param color 执子颜色 最好和enum ChessState那里保持一致
+  * @param first 是否下一个落子
  */
 typedef struct {
     int id;
     int color;
+    bool first;
 } Player;
 
 /*!
@@ -38,6 +40,7 @@ typedef struct {
  * @param last_chess 指向最后一次落的子
  * @param player1 玩家1
  * @parem player2 玩家2
+ * @parem chesspiece_num 记录棋盘上棋子数目
  */
 class Gobang{
 private:
@@ -45,6 +48,7 @@ private:
     ChessPiece* last_chess;
     Player* player1;
     Player* player2;
+    int chesspiece_num;
 public:
     Gobang();
     Gobang(Gobang&)=delete;
@@ -58,6 +62,7 @@ public:
     ChessPiece** GetChess();
     void Record();
     void Replay();
+    void GetPieceNum();
 
 };
 

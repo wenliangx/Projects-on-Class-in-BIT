@@ -29,13 +29,24 @@ Gobang::~Gobang() {
 }
 
 // TODO(W)这个函数将在构造函数和每次重新开始时调用，需要将所有的变量和状态初始化
-void Gobang::InitGobang() {
-
+void Gobang::InitGobang(int a) {
+    for(int i=0;i<SIZE;++i){
+        for(int j=0;j<SIZE;++j){
+            chess[i][j].if_last = 0;
+            chess[i][j].state = 0;
+        }
+    }
+    last_chess = nullptr;
+    InitPlayer(a);
 }
 
 // TODO(W)这个函数用于初始化玩家，只在InitGobang中被调用,
-void Gobang::InitPlayer(int) {
-
+///<a,用于玩家选择棋子和id，只区分正负
+void Gobang::InitPlayer(int a) {
+    player1->color=a/a;
+    player2->color=(-1)*a/a;
+    player1->id=a;
+    player2->id=a*(-1);
 }
 
 // TODO(Z)这个函数是落子的函数，每次落子需要改变相应棋子的状态并调用判断输赢和棋子全满的函数，两个参数分别是行和列（0-14)。如果平局则需要调用Replay函数
@@ -59,7 +70,15 @@ ChessPiece**Gobang::GetChess() {
 
 //TODO(W)这个函数用于记录总手数和下一步该谁下，可以向类内或player添加属性
 void Gobang::Record() {
-
+    GetPieceNum();
+    if(chesspiece_num%2){
+        player1->first=0;
+        player2->first=1;
+    }
+    else {
+        player1->first=1;
+        player2->first=0;
+    }
 }
 
 // TODO()这个函数用于重开游戏，会相应调用Init函数
@@ -67,4 +86,13 @@ void Gobang::Replay() {
 
 }
 
-
+//这个函数用于统计棋盘上棋子个数，记录到变量chesspiece_num
+void Gobang::GetPieceNum(){
+    int num=0;
+    for(int i=0;i<SIZE;++i){
+        for(int j=0;j<SIZE;++j){
+            if(!chess[i][j].state)++num;
+        }
+    }
+    chesspiece_num=num;
+}

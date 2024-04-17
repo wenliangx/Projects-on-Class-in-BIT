@@ -49,6 +49,7 @@ private:
     Player* player1;
     Player* player2;
     int chesspiece_num;
+    int winner;
 public:
     Gobang();
     Gobang(Gobang&)=delete;

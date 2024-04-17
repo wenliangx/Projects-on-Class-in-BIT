@@ -10,8 +10,8 @@ Gobang::Gobang() {
         chess[i] = new ChessPiece[SIZE];
     }
     last_chess = nullptr;
-    player1=new Player {0,0};
-    player2=new Player {0,0};
+    player1=new Player {1,0,0};
+    player2=new Player {-1,0,0};
 
     InitGobang();
 }
@@ -41,12 +41,20 @@ void Gobang::InitGobang(int a) {
 }
 
 // TODO(W)这个函数用于初始化玩家，只在InitGobang中被调用,
-///<a,用于玩家选择棋子和id，只区分正负
+///<a,由玩家1输入选择，正数为黑子，其余为白子
 void Gobang::InitPlayer(int a) {
-    player1->color=a/a;
-    player2->color=(-1)*a/a;
-    player1->id=a;
-    player2->id=a*(-1);
+    if(a){
+        player1->color=-1;
+        player1->first=1;
+        player2->color=1;
+        player2->first=0;
+    }
+    else{
+        player1->color=1;
+        player1->first=0;
+        player2->color=-1;
+        player2->first=1;
+    }
 }
 
 // TODO(Z)这个函数是落子的函数，每次落子需要改变相应棋子的状态并调用判断输赢和棋子全满的函数，两个参数分别是行和列（0-14)。如果平局则需要调用Replay函数
@@ -71,7 +79,7 @@ ChessPiece**Gobang::GetChess() {
 //TODO(W)这个函数用于记录总手数和下一步该谁下，可以向类内或player添加属性
 void Gobang::Record() {
     GetPieceNum();
-    if(chesspiece_num%2){
+    if((chesspiece_num%2==0&&player1->color==1)||(chesspiece_num%2==1&&player1->color==-1)){
         player1->first=0;
         player2->first=1;
     }

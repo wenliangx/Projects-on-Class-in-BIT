@@ -7,6 +7,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 set(CMAKE_PREFIX_PATH "C:/Qt/6.6.2/mingw_64")
+file(COPY "resource/chessresource.rcc" DESTINATION "resource")
 
 find_package(Qt6 COMPONENTS
         Core
@@ -25,7 +26,11 @@ add_executable(Project1 main.cpp
         settingwindow/settingwindow.h
         settingwindow/settingwindow.ui
         gobangwindow/gobang.cpp
-        gobangwindow/gobang.h)
+        gobangwindow/gobang.h
+        picksidewindow/picksidewindow.cpp
+        picksidewindow/picksidewindow.h
+        picksidewindow/picksidewindow.ui
+)
 target_link_libraries(Project1
         Qt::Core
         Qt::Gui

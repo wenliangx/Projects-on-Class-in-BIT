@@ -13,7 +13,8 @@ Gobang::Gobang() {
     player1=new Player {0,0};
     player2=new Player {0,0};
 
-    InitGobang();
+    InitGobang(1);
+    chesspiece_num = 0;
 }
 
 Gobang::~Gobang() {
@@ -32,8 +33,8 @@ Gobang::~Gobang() {
 void Gobang::InitGobang(int a) {
     for(int i=0;i<SIZE;++i){
         for(int j=0;j<SIZE;++j){
-            chess[i][j].if_last = 0;
-            chess[i][j].state = 0;
+            chess[i][j].if_last = false;
+            chess[i][j].state = empty;
         }
     }
     last_chess = nullptr;
@@ -72,12 +73,12 @@ ChessPiece**Gobang::GetChess() {
 void Gobang::Record() {
     GetPieceNum();
     if(chesspiece_num%2){
-        player1->first=0;
-        player2->first=1;
+        player1->first=false;
+        player2->first=true;
     }
     else {
-        player1->first=1;
-        player2->first=0;
+        player1->first=true;
+        player2->first=false;
     }
 }
 
@@ -95,4 +96,8 @@ void Gobang::GetPieceNum(){
         }
     }
     chesspiece_num=num;
+}
+
+Player* Gobang::GetPlayer1() {
+    return player1;
 }

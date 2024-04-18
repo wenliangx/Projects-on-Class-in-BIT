@@ -6,13 +6,15 @@
 #define PROJECT1_GOBANGWINDOW_H
 
 #include <QDialog>
+#include <QMouseEvent>
 #include "QPainter"
-
+#include "gobang.h"
 
 #define DISTANCE 40
 #define NUM 15
 #define X_START 80
 #define y_START 20
+#define CHESS_PIECE_SIZE 20
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class GobangWindow; }
@@ -26,15 +28,26 @@ public:
 
     ~GobangWindow() override;
 
-    void paintEvent(QPaintEvent*);
+    void paintEvent(QPaintEvent*) override;
 
 private:
     Ui::GobangWindow *ui;
     int* x;
     int* y;
+    QLabel*** chess;
+    QLabel* last_mouse;
+    QPixmap black_chess_piece_pixmap;
+    QPixmap white_chess_piece_pixmap;
+    QPixmap trans_black_pixmap;
+    QPixmap trans_white_pixmap;
+    QLabel* player1label;
+    QLabel* player2label;
+    Gobang* broad;
 private slots:
-    void on_pushButtonBack_clicked();
-    void on_pushButtonGobangToSetting_clicked();
+    void GobangBack();
+    void OpenSetting();
+    void PickSide(int);
+    void mouseMoveEvent(QMouseEvent *event) override;
 };
 
 

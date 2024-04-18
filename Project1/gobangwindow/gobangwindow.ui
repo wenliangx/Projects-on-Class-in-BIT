@@ -7,37 +7,37 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>GobangWindow</string>
   </property>
-  <widget class="QPushButton" name="pushButtonBack">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>500</y>
-     <width>75</width>
-     <height>24</height>
+     <y>240</y>
+     <width>77</width>
+     <height>121</height>
     </rect>
    </property>
-   <property name="text">
-    <string>返回</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonGobangToSetting">
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>440</y>
-     <width>75</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>设置</string>
-   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="ButtonGobangBack">
+      <property name="text">
+       <string>返回</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="ButtonGobangToSetting">
+      <property name="text">
+       <string>设置</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

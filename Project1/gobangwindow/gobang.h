@@ -4,6 +4,9 @@
 
 #ifndef PROJECT1_GOBANG_H
 #define PROJECT1_GOBANG_H
+
+#include <QImage>
+#include <QLabel>
 #include "string"
 
 
@@ -26,12 +29,13 @@ typedef struct {
  * @brief 玩家信息
  * @param id 玩家ID,用大于0小于0区分就行
  * @param color 执子颜色 最好和enum ChessState那里保持一致
-  * @param first 是否下一个落子
+ * @param first 是否下一个落子
  */
 typedef struct {
     int id;
     int color;
     bool first;
+    QImage chess;
 } Player;
 
 /*!
@@ -39,8 +43,8 @@ typedef struct {
  * @param chess 采用线性表结构 记录每个点的状态
  * @param last_chess 指向最后一次落的子
  * @param player1 玩家1
- * @parem player2 玩家2
- * @parem chesspiece_num 记录棋盘上棋子数目
+ * @param player2 玩家2
+ * @param chesspiece_num 记录棋盘上棋子数目
  */
 class Gobang{
 private:
@@ -54,7 +58,7 @@ public:
     Gobang(Gobang&)=delete;
     ~Gobang();
 
-    void InitGobang();
+    void InitGobang(int);
     void InitPlayer(int);
     void Move(int ,int);
     void Win();
@@ -63,6 +67,7 @@ public:
     void Record();
     void Replay();
     void GetPieceNum();
+    Player* GetPlayer1();
 
 };
 

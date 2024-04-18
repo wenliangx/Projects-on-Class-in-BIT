@@ -59,18 +59,84 @@ void Gobang::InitPlayer(int a) {
 }
 
 // TODO(Z)这个函数是落子的函数，每次落子需要改变相应棋子的状态并调用判断输赢和棋子全满的函数，两个参数分别是行和列（0-14)。如果平局则需要调用Replay函数
-void Gobang::Move(int, int) {
-
+void Gobang::Move(int row, int column) {
+    if(player1->first==1){
+	 	chess[row][column].state=player1->color;
+	 }else{
+	 	chess[row][column].state=player2->color;
+	 };	 
+	Win(row,column);
+    Full();
 }
 
 // TODO(Z)这个函数用于判断输赢，在每次落子后会被调用。如果有一方赢了，则需要改变类内的变量作为标志（可以添加在类内，也可以添加在player中）
-void Gobang::Win() {
-
+void Gobang::Win(int row, int column) {
+ int left_counter,right_counter,up_counter,down_counter,left_up_counter,right_down_counter,left_down_counter,right_up_counter=0;
+	 for(int i=0;i<4&&row-i>0;++i){	     
+		 if(chess[row-i-1][column].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++left_counter; 
+	 };
+	 for(int i=0;i<4&&row+i+1<SIZE;++i){	     
+		 if(chess[row+i+1][column].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++right_counter; 
+	 };
+	 for(int i=0;i<4&&column+i+1<SIZE;++i){	     
+		 if(chess[row][column+i+1].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++up_counter; 
+	 };
+	 for(int i=0;i<4&&column-i>0;++i){	     
+		 if(chess[row][column-i-1].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++down_counter; 
+	 };
+	 for(int i=0;i<4&&row-i>0&&column+i+1<SIZE;++i){	     
+		 if(chess[row-i-1][column+i+1].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++left_up_counter; 
+	 };
+	  for(int i=0;i<4&&row+i+1<SIZE&&column-i>0;++i){	     
+		 if(chess[row+i+1][column-i-1].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++right_down_counter; 
+	 };
+	  for(int i=0;i<4&&row-i>0&&column-i>0;++i){	     
+		 if(chess[row-i-1][column-i-1].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++left_down_counter; 
+	 };
+	 for(int i=0;i<4&&row+i+1<SIZE&&column+i+1<SIZE;++i){	     
+		 if(chess[row+i+1][column+i+1].state!=chess[row][column].state){
+		 	break;
+		 };
+		 ++right_up_counter; 
+	 };
+	 if(left_counter+right_counter>=5||up_counter+down_counter>=5||left_up_counter+ right_down_counter>=5||left_down_counter+right_up_counter>=5){
+	 	winner=chess[row][column].state;
+	 };
 }
 
 //TODO(Z)这个函数用于判断是否下满
 bool Gobang::Full() {
-
+   for(int i=0;i<SIZE;++i){
+   	for(int j=0;j<SIZE;++j){
+   	  if(chess[i][j].state!=0){
+   	  	return 0;
+      };
+      if(i==SIZE-1&&j==SIZE-1){
+      	return 1;
+	  };
+	}
+  }; 
 }
 
 ChessPiece**Gobang::GetChess() {

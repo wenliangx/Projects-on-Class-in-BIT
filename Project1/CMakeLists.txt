@@ -30,6 +30,11 @@ add_executable(Project1 WIN32 main.cpp
         picksidewindow/picksidewindow.cpp
         picksidewindow/picksidewindow.h
         picksidewindow/picksidewindow.ui
+        ensurewindow/ensurewindow.cpp
+        ensurewindow/ensurewindow.h
+        ensurewindow/ensurewindow.ui
+        ensurewindow/ensure.cpp
+        ensurewindow/ensure.h
 )
 target_link_libraries(Project1
         Qt::Core

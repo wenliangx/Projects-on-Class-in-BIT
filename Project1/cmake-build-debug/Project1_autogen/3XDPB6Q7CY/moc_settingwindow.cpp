@@ -39,27 +39,31 @@ namespace {
 struct qt_meta_stringdata_CLASSSettingWindowENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSSettingWindowENDCLASS = QtMocHelpers::stringData(
     "SettingWindow",
-    "on_pushButtonClose_clicked",
-    ""
+    "closeEvent",
+    "",
+    "QCloseEvent*"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSSettingWindowENDCLASS_t {
-    uint offsetsAndSizes[6];
+    uint offsetsAndSizes[8];
     char stringdata0[14];
-    char stringdata1[27];
+    char stringdata1[11];
     char stringdata2[1];
+    char stringdata3[13];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSSettingWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSSettingWindowENDCLASS_t qt_meta_stringdata_CLASSSettingWindowENDCLASS = {
     {
         QT_MOC_LITERAL(0, 13),  // "SettingWindow"
-        QT_MOC_LITERAL(14, 26),  // "on_pushButtonClose_clicked"
-        QT_MOC_LITERAL(41, 0)   // ""
+        QT_MOC_LITERAL(14, 10),  // "closeEvent"
+        QT_MOC_LITERAL(25, 0),  // ""
+        QT_MOC_LITERAL(26, 12)   // "QCloseEvent*"
     },
     "SettingWindow",
-    "on_pushButtonClose_clicked",
-    ""
+    "closeEvent",
+    "",
+    "QCloseEvent*"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -79,10 +83,10 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSSettingWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x08,    1 /* Private */,
+       1,    1,   20,    2, 0x08,    1 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3,    2,
 
        0        // eod
 };
@@ -96,8 +100,9 @@ Q_CONSTINIT const QMetaObject SettingWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSSettingWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<SettingWindow, std::true_type>,
-        // method 'on_pushButtonClose_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        // method 'closeEvent'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QCloseEvent *, std::false_type>
     >,
     nullptr
 } };
@@ -108,11 +113,10 @@ void SettingWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<SettingWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_pushButtonClose_clicked(); break;
+        case 0: _t->closeEvent((*reinterpret_cast< std::add_pointer_t<QCloseEvent*>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *SettingWindow::metaObject() const

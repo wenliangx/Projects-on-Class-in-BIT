@@ -105,6 +105,22 @@ build CMakeFiles/Project1.dir/picksidewindow/picksidewindow.cpp.obj: CXX_COMPILE
   OBJECT_DIR = CMakeFiles\Project1.dir
   OBJECT_FILE_DIR = CMakeFiles\Project1.dir\picksidewindow
 
+build CMakeFiles/Project1.dir/ensurewindow/ensurewindow.cpp.obj: CXX_COMPILER__Project1_unscanned_Debug D$:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensurewindow.cpp || cmake_object_order_depends_target_Project1
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Project1.dir\ensurewindow\ensurewindow.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/Project1_autogen/include -isystem C:/Qt/6.6.2/mingw_64/include/QtCore -isystem C:/Qt/6.6.2/mingw_64/include -isystem C:/Qt/6.6.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.6.2/mingw_64/include/QtGui -isystem C:/Qt/6.6.2/mingw_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles\Project1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project1.dir\ensurewindow
+
+build CMakeFiles/Project1.dir/ensurewindow/ensure.cpp.obj: CXX_COMPILER__Project1_unscanned_Debug D$:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensure.cpp || cmake_object_order_depends_target_Project1
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Project1.dir\ensurewindow\ensure.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/Project1_autogen/include -isystem C:/Qt/6.6.2/mingw_64/include/QtCore -isystem C:/Qt/6.6.2/mingw_64/include -isystem C:/Qt/6.6.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.6.2/mingw_64/include/QtGui -isystem C:/Qt/6.6.2/mingw_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles\Project1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project1.dir\ensurewindow
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Project1
@@ -113,7 +129,7 @@ build CMakeFiles/Project1.dir/picksidewindow/picksidewindow.cpp.obj: CXX_COMPILE
 #############################################
 # Link the executable Project1.exe
 
-build Project1.exe: CXX_EXECUTABLE_LINKER__Project1_Debug CMakeFiles/Project1.dir/Project1_autogen/mocs_compilation.cpp.obj CMakeFiles/Project1.dir/main.cpp.obj CMakeFiles/Project1.dir/startwindow/startwindow.cpp.obj CMakeFiles/Project1.dir/gobangwindow/gobangwindow.cpp.obj CMakeFiles/Project1.dir/settingwindow/settingwindow.cpp.obj CMakeFiles/Project1.dir/gobangwindow/gobang.cpp.obj CMakeFiles/Project1.dir/picksidewindow/picksidewindow.cpp.obj | C$:/Qt/6.6.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.6.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.6.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.6.2/mingw_64/lib/libQt6EntryPoint.a || Project1_autogen Project1_autogen_timestamp_deps
+build Project1.exe: CXX_EXECUTABLE_LINKER__Project1_Debug CMakeFiles/Project1.dir/Project1_autogen/mocs_compilation.cpp.obj CMakeFiles/Project1.dir/main.cpp.obj CMakeFiles/Project1.dir/startwindow/startwindow.cpp.obj CMakeFiles/Project1.dir/gobangwindow/gobangwindow.cpp.obj CMakeFiles/Project1.dir/settingwindow/settingwindow.cpp.obj CMakeFiles/Project1.dir/gobangwindow/gobang.cpp.obj CMakeFiles/Project1.dir/picksidewindow/picksidewindow.cpp.obj CMakeFiles/Project1.dir/ensurewindow/ensurewindow.cpp.obj CMakeFiles/Project1.dir/ensurewindow/ensure.cpp.obj | C$:/Qt/6.6.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.6.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.6.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.6.2/mingw_64/lib/libQt6EntryPoint.a || Project1_autogen Project1_autogen_timestamp_deps
   FLAGS = -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.6.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.6.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.6.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.6.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -157,7 +173,7 @@ build Project1_autogen_timestamp_deps: phony CMakeFiles/Project1_autogen_timesta
 #############################################
 # Utility command for Project1_autogen
 
-build Project1_autogen: phony CMakeFiles/Project1_autogen Project1_autogen/include/startwindow/ui_startwindow.h Project1_autogen/include/gobangwindow/ui_gobangwindow.h Project1_autogen/include/settingwindow/ui_settingwindow.h Project1_autogen/include/picksidewindow/ui_picksidewindow.h Project1_autogen/timestamp Project1_autogen/mocs_compilation.cpp Project1_autogen_timestamp_deps
+build Project1_autogen: phony CMakeFiles/Project1_autogen Project1_autogen/include/startwindow/ui_startwindow.h Project1_autogen/include/gobangwindow/ui_gobangwindow.h Project1_autogen/include/settingwindow/ui_settingwindow.h Project1_autogen/include/picksidewindow/ui_picksidewindow.h Project1_autogen/include/ensurewindow/ui_ensurewindow.h Project1_autogen/timestamp Project1_autogen/mocs_compilation.cpp Project1_autogen_timestamp_deps
 
 
 #############################################
@@ -179,7 +195,7 @@ build CMakeFiles/Project1_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFi
 #############################################
 # Phony custom command for CMakeFiles\Project1_autogen
 
-build CMakeFiles/Project1_autogen Project1_autogen/include/startwindow/ui_startwindow.h Project1_autogen/include/gobangwindow/ui_gobangwindow.h Project1_autogen/include/settingwindow/ui_settingwindow.h Project1_autogen/include/picksidewindow/ui_picksidewindow.h | ${cmake_ninja_workdir}CMakeFiles/Project1_autogen ${cmake_ninja_workdir}Project1_autogen/include/startwindow/ui_startwindow.h ${cmake_ninja_workdir}Project1_autogen/include/gobangwindow/ui_gobangwindow.h ${cmake_ninja_workdir}Project1_autogen/include/settingwindow/ui_settingwindow.h ${cmake_ninja_workdir}Project1_autogen/include/picksidewindow/ui_picksidewindow.h: phony Project1_autogen/timestamp || Project1_autogen_timestamp_deps
+build CMakeFiles/Project1_autogen Project1_autogen/include/startwindow/ui_startwindow.h Project1_autogen/include/gobangwindow/ui_gobangwindow.h Project1_autogen/include/settingwindow/ui_settingwindow.h Project1_autogen/include/picksidewindow/ui_picksidewindow.h Project1_autogen/include/ensurewindow/ui_ensurewindow.h | ${cmake_ninja_workdir}CMakeFiles/Project1_autogen ${cmake_ninja_workdir}Project1_autogen/include/startwindow/ui_startwindow.h ${cmake_ninja_workdir}Project1_autogen/include/gobangwindow/ui_gobangwindow.h ${cmake_ninja_workdir}Project1_autogen/include/settingwindow/ui_settingwindow.h ${cmake_ninja_workdir}Project1_autogen/include/picksidewindow/ui_picksidewindow.h ${cmake_ninja_workdir}Project1_autogen/include/ensurewindow/ui_ensurewindow.h: phony Project1_autogen/timestamp || Project1_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

@@ -589,6 +589,10 @@ Project1_autogen/timestamp: \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/3.28.1/CMakeRCCompiler.cmake \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/3.28.1/CMakeSystem.cmake \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/Project1_autogen/moc_predefs.h \
+	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensure.cpp \
+	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensure.h \
+	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensurewindow.cpp \
+	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensurewindow.h \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/gobangwindow/gobang.cpp \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/gobangwindow/gobang.h \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/gobangwindow/gobangwindow.cpp \
@@ -600,6 +604,7 @@ Project1_autogen/timestamp: \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/settingwindow/settingwindow.h \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/startwindow/startwindow.cpp \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/startwindow/startwindow.h \
+	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensurewindow.ui \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/gobangwindow/gobangwindow.ui \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/picksidewindow/picksidewindow.ui \
 	D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/settingwindow/settingwindow.ui \

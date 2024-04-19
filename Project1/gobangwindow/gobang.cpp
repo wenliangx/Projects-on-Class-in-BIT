@@ -1,7 +1,3 @@
-//
-// Created by 18759 on 2024/4/15.
-//
-
 #include "gobang.h"
 
 Gobang::Gobang() {
@@ -35,12 +31,11 @@ void Gobang::InitGobang(int a) {
     for(int i=0;i<SIZE;++i){
         for(int j=0;j<SIZE;++j){
             chess[i][j].if_last = false;
-            chess[i][j].state = empty;
+            chess[i][j].state = EMPTY;
         }
     }
     chesspiece_num = 0;
     winner = 0;
-
     last_chess = nullptr;
     InitPlayer(a);
 }
@@ -65,16 +60,15 @@ void Gobang::InitPlayer(int a) {
 // TODO(Z)这个函数是落子的函数，每次落子需要改变相应棋子的状态并调用判断输赢和棋子全满的函数，两个参数分别是行和列（0-14)。如果平局则需要调用Replay函数
 ChessPiece* Gobang::Move(int row, int column) {
     if(player1->first==1){
-        if(player1->color == 1) {chess[row][column].state=white;}
-        else {chess[row][column].state=black;}
+        if(player1->color == 1) {chess[row][column].state=WHITE;}
+        else {chess[row][column].state=BLACK;}
 	 }else{
-        if(player2->color == 1){ chess[row][column].state=white;}
-        else{ chess[row][column].state=black;}
+        if(player2->color == 1){ chess[row][column].state=WHITE;}
+        else{ chess[row][column].state=BLACK;}
 	 }
     last_chess = &chess[row][column];
     Record();
 	Win(row,column);
-    Full();
     return &chess[row][column];
 }
 
@@ -131,7 +125,7 @@ void Gobang::Win(int row, int column) {
 		 ++right_up_counter; 
 	 }
 	 if(left_counter+right_counter>=4||up_counter+down_counter>=4||left_up_counter+ right_down_counter>=4||left_down_counter+right_up_counter>=4){
-         if((chess[row][column].state == black && player1->color == -1)||(chess[row][column].state == white && player1->color == 1)){
+         if((chess[row][column].state == BLACK && player1->color == -1)||(chess[row][column].state == WHITE && player1->color == 1)){
              winner = 1;
          }else{
              winner = 2;
@@ -184,4 +178,10 @@ ChessPiece *Gobang::GetChessPiece(int i, int j) const {
 
 int Gobang::GetWinner() const {
     return winner;
+}
+
+void Gobang::SetWinner(int w) {
+    if(!winner && !Full()){
+        winner = w;
+    }
 }

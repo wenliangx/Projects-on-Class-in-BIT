@@ -35,12 +35,16 @@ private:
     Ui::GobangWindow *ui;
     int* x;
     int* y;
+    bool sure;
     QLabel*** chess;
     QLabel* last_mouse;
+    QLabel* last_chess_label;
     QPixmap black_chess_piece_pixmap;
     QPixmap white_chess_piece_pixmap;
     QPixmap trans_black_pixmap;
     QPixmap trans_white_pixmap;
+    QPixmap eblack_chess_piece_pixmap;
+    QPixmap ewhite_chess_piece_pixmap;
     QLabel* player1label;
     QLabel* player2label;
     Gobang* broad;
@@ -52,6 +56,9 @@ private slots:
     void Restart();
     void mouseMoveEvent(QMouseEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
+    void PressSure(bool);
+    void PressSurround1();
+    void PressSurround2();
 };
 
 

@@ -48,11 +48,14 @@ constexpr auto qt_meta_stringdata_CLASSGobangWindowENDCLASS = QtMocHelpers::stri
     "mouseMoveEvent",
     "QMouseEvent*",
     "event",
-    "mousePressEvent"
+    "mousePressEvent",
+    "PressSure",
+    "PressSurround1",
+    "PressSurround2"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSGobangWindowENDCLASS_t {
-    uint offsetsAndSizes[20];
+    uint offsetsAndSizes[26];
     char stringdata0[13];
     char stringdata1[11];
     char stringdata2[1];
@@ -63,6 +66,9 @@ struct qt_meta_stringdata_CLASSGobangWindowENDCLASS_t {
     char stringdata7[13];
     char stringdata8[6];
     char stringdata9[16];
+    char stringdata10[10];
+    char stringdata11[15];
+    char stringdata12[15];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSGobangWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -77,7 +83,10 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSGobangWindowENDCLASS_t qt_meta_
         QT_MOC_LITERAL(54, 14),  // "mouseMoveEvent"
         QT_MOC_LITERAL(69, 12),  // "QMouseEvent*"
         QT_MOC_LITERAL(82, 5),  // "event"
-        QT_MOC_LITERAL(88, 15)   // "mousePressEvent"
+        QT_MOC_LITERAL(88, 15),  // "mousePressEvent"
+        QT_MOC_LITERAL(104, 9),  // "PressSure"
+        QT_MOC_LITERAL(114, 14),  // "PressSurround1"
+        QT_MOC_LITERAL(129, 14)   // "PressSurround2"
     },
     "GobangWindow",
     "GobangBack",
@@ -88,7 +97,10 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSGobangWindowENDCLASS_t qt_meta_
     "mouseMoveEvent",
     "QMouseEvent*",
     "event",
-    "mousePressEvent"
+    "mousePressEvent",
+    "PressSure",
+    "PressSurround1",
+    "PressSurround2"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -100,7 +112,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGobangWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -108,12 +120,15 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGobangWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x08,    1 /* Private */,
-       3,    0,   51,    2, 0x08,    2 /* Private */,
-       4,    1,   52,    2, 0x08,    3 /* Private */,
-       5,    0,   55,    2, 0x08,    5 /* Private */,
-       6,    1,   56,    2, 0x08,    6 /* Private */,
-       9,    1,   59,    2, 0x08,    8 /* Private */,
+       1,    0,   68,    2, 0x08,    1 /* Private */,
+       3,    0,   69,    2, 0x08,    2 /* Private */,
+       4,    1,   70,    2, 0x08,    3 /* Private */,
+       5,    0,   73,    2, 0x08,    5 /* Private */,
+       6,    1,   74,    2, 0x08,    6 /* Private */,
+       9,    1,   77,    2, 0x08,    8 /* Private */,
+      10,    1,   80,    2, 0x08,   10 /* Private */,
+      11,    0,   83,    2, 0x08,   12 /* Private */,
+      12,    0,   84,    2, 0x08,   13 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -122,6 +137,9 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGobangWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 7,    8,
     QMetaType::Void, 0x80000000 | 7,    8,
+    QMetaType::Void, QMetaType::Bool,    2,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -149,7 +167,14 @@ Q_CONSTINIT const QMetaObject GobangWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>,
         // method 'mousePressEvent'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>
+        QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>,
+        // method 'PressSure'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
+        // method 'PressSurround1'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'PressSurround2'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -166,6 +191,9 @@ void GobangWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 3: _t->Restart(); break;
         case 4: _t->mouseMoveEvent((*reinterpret_cast< std::add_pointer_t<QMouseEvent*>>(_a[1]))); break;
         case 5: _t->mousePressEvent((*reinterpret_cast< std::add_pointer_t<QMouseEvent*>>(_a[1]))); break;
+        case 6: _t->PressSure((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 7: _t->PressSurround1(); break;
+        case 8: _t->PressSurround2(); break;
         default: ;
         }
     }
@@ -190,13 +218,13 @@ int GobangWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }

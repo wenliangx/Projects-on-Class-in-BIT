@@ -349,4 +349,5 @@ D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-de
   C:/Qt/6.6.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.6.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.6.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-  C:/Qt/6.6.2/mingw_64/include/QtWidgets/qwidget.h
+  C:/Qt/6.6.2/mingw_64/include/QtWidgets/qwidget.h \
+  D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensure.h

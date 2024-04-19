@@ -6,7 +6,7 @@
 #define PROJECT1_SETTINGWINDOW_H
 
 #include <QDialog>
-
+#include "../ensurewindow/ensure.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SettingWindow; }
@@ -23,7 +23,7 @@ public:
 private:
     Ui::SettingWindow *ui;
 private slots:
-    void on_pushButtonClose_clicked();
+    void closeEvent(QCloseEvent *) override;
 };
 
 

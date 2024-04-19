@@ -6,7 +6,7 @@
 #define PROJECT1_STARTWINDOW_H
 
 #include <QDialog>
-
+#include "../ensurewindow/ensurewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class StartWindow; }

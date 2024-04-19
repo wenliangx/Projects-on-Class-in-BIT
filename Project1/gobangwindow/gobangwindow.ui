@@ -50,7 +50,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>30</y>
+     <y>40</y>
      <width>54</width>
      <height>16</height>
     </rect>
@@ -83,6 +83,32 @@
    </property>
    <property name="text">
     <string>重新开始</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonSurround1">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>570</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>玩家1投降</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonSurround2">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>10</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>玩家2投降</string>
    </property>
   </widget>
  </widget>

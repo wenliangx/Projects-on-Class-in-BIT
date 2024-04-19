@@ -11,12 +11,16 @@
 SettingWindow::SettingWindow(QWidget *parent) :
         QDialog(parent), ui(new Ui::SettingWindow) {
     ui->setupUi(this);
+    connect(ui->pushButtonClose,SIGNAL(clicked()),this,SLOT(close()));
+    ui->radioButton->setChecked(if_ensure);
 }
 
 SettingWindow::~SettingWindow() {
     delete ui;
 }
 
-void SettingWindow::on_pushButtonClose_clicked() {
-    this->close();
+void SettingWindow::closeEvent(QCloseEvent *) {
+    ChangeEnsure(ui->radioButton->isChecked());
 }
+
+

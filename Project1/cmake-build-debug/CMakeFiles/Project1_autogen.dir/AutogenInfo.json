@@ -263,6 +263,18 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensure.h",
+			"MU",
+			"IWH2YWDOOZ/moc_ensure.cpp",
+			null
+		],
+		[
+			"D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensurewindow.h",
+			"MU",
+			"IWH2YWDOOZ/moc_ensurewindow.cpp",
+			null
+		],
+		[
 			"D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/gobangwindow/gobang.h",
 			"MU",
 			"IKNWYRLR2R/moc_gobang.cpp",
@@ -363,6 +375,16 @@
 	"SETTINGS_FILE" : "D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/cmake-build-debug/CMakeFiles/Project1_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensure.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/ensurewindow/ensurewindow.cpp",
+			"MU",
+			null
+		],
 		[
 			"D:/file_wenliang/homework/4/C++/Projects-on-Class-in-BIT/Project1/gobangwindow/gobang.cpp",
 			"MU",

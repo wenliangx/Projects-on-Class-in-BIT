@@ -11,9 +11,10 @@
 
 
 #define SIZE 15 ///< 棋盘大小
+#define BLACK (-1)
+#define EMPTY 0
+#define WHITE 1
 
-
-enum ChessState{black = -1, empty, white}; ///<每个棋盘点可能的状态
 
 /*!
  * @brief 棋子
@@ -21,7 +22,7 @@ enum ChessState{black = -1, empty, white}; ///<每个棋盘点可能的状态
  * @param if_last 这个棋子是不是最后下的
  */
 typedef struct {
-    ChessState state;
+    int state;
     bool if_last;
 } ChessPiece;
 
@@ -63,15 +64,16 @@ public:
     void InitPlayer(int);
     ChessPiece* Move(int ,int);
     void Win(int, int);
-    bool Full() const;
+    [[nodiscard]] bool Full() const;
     ChessPiece** GetChess();
     void Record();
     void Replay();
-    int GetPieceNum()const;
+    [[nodiscard]] int GetPieceNum()const;
     Player* GetPlayer1();
-    ChessPiece* GetLastChessPiece()const;
-    ChessPiece* GetChessPiece(int, int)const;
-    int GetWinner()const;
+    [[nodiscard]] ChessPiece* GetLastChessPiece()const;
+    [[nodiscard]] ChessPiece* GetChessPiece(int, int)const;
+    [[nodiscard]] int GetWinner()const;
+    void SetWinner(int);
 
 };
 

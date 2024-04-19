@@ -30,6 +30,8 @@ public:
     QLabel *labelPlayer2;
     QLabel *labelPlayer1;
     QPushButton *pushButtonRestart;
+    QPushButton *pushButtonSurround1;
+    QPushButton *pushButtonSurround2;
 
     void setupUi(QDialog *GobangWindow)
     {
@@ -59,13 +61,19 @@ public:
 
         labelPlayer2 = new QLabel(GobangWindow);
         labelPlayer2->setObjectName("labelPlayer2");
-        labelPlayer2->setGeometry(QRect(700, 30, 54, 16));
+        labelPlayer2->setGeometry(QRect(700, 40, 54, 16));
         labelPlayer1 = new QLabel(GobangWindow);
         labelPlayer1->setObjectName("labelPlayer1");
         labelPlayer1->setGeometry(QRect(700, 550, 54, 16));
         pushButtonRestart = new QPushButton(GobangWindow);
         pushButtonRestart->setObjectName("pushButtonRestart");
         pushButtonRestart->setGeometry(QRect(690, 450, 75, 24));
+        pushButtonSurround1 = new QPushButton(GobangWindow);
+        pushButtonSurround1->setObjectName("pushButtonSurround1");
+        pushButtonSurround1->setGeometry(QRect(690, 570, 75, 24));
+        pushButtonSurround2 = new QPushButton(GobangWindow);
+        pushButtonSurround2->setObjectName("pushButtonSurround2");
+        pushButtonSurround2->setGeometry(QRect(690, 10, 75, 24));
 
         retranslateUi(GobangWindow);
 
@@ -81,6 +89,8 @@ public:
         labelPlayer2->setText(QCoreApplication::translate("GobangWindow", "TextLabel", nullptr));
         labelPlayer1->setText(QCoreApplication::translate("GobangWindow", "TextLabel", nullptr));
         pushButtonRestart->setText(QCoreApplication::translate("GobangWindow", "\351\207\215\346\226\260\345\274\200\345\247\213", nullptr));
+        pushButtonSurround1->setText(QCoreApplication::translate("GobangWindow", "\347\216\251\345\256\2661\346\212\225\351\231\215", nullptr));
+        pushButtonSurround2->setText(QCoreApplication::translate("GobangWindow", "\347\216\251\345\256\2662\346\212\225\351\231\215", nullptr));
     } // retranslateUi
 
 };

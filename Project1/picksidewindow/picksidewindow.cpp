@@ -29,7 +29,11 @@ PickSideWindow::~PickSideWindow() {
 }
 
 int PickSideWindow::GetSide() const {
-        return ui->comboBoxPickSide->currentIndex();
+    if(ui->comboBoxPickSide->currentIndex()){
+        return 1;
+    }else{
+        return -1;
+    }
 }
 
 void PickSideWindow::closeEvent(QCloseEvent * e) {

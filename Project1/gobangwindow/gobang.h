@@ -61,14 +61,17 @@ public:
 
     void InitGobang(int);
     void InitPlayer(int);
-    void Move(int ,int);
-    void Win();
-    bool Full();
+    ChessPiece* Move(int ,int);
+    void Win(int, int);
+    bool Full() const;
     ChessPiece** GetChess();
     void Record();
     void Replay();
-    void GetPieceNum();
+    int GetPieceNum()const;
     Player* GetPlayer1();
+    ChessPiece* GetLastChessPiece()const;
+    ChessPiece* GetChessPiece(int, int)const;
+    int GetWinner()const;
 
 };
 

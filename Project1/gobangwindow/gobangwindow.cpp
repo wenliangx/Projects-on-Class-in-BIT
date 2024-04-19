@@ -18,6 +18,7 @@ GobangWindow::GobangWindow(QWidget *parent) :
 
     connect(ui->ButtonGobangToSetting, SIGNAL(clicked()), this, SLOT(OpenSetting()));
     connect(ui->ButtonGobangBack, SIGNAL(clicked()), this, SLOT(GobangBack()));
+    connect(ui->pushButtonRestart, SIGNAL(clicked()), this, SLOT(Restart()));
 
     broad = new Gobang;
 
@@ -53,8 +54,13 @@ GobangWindow::GobangWindow(QWidget *parent) :
 
     player1label = new QLabel(this);
     player2label = new QLabel(this);
-    player1label->setGeometry(700,100,CHESS_PIECE_SIZE,CHESS_PIECE_SIZE);
-    player2label->setGeometry(700,500,CHESS_PIECE_SIZE,CHESS_PIECE_SIZE);
+    player1label->setGeometry(700,500,CHESS_PIECE_SIZE,CHESS_PIECE_SIZE);
+    player2label->setGeometry(700,100,CHESS_PIECE_SIZE,CHESS_PIECE_SIZE);
+
+    ui->labelDraw->setText(QString());
+    ui->labelPlayer1->setText(QString());
+    ui->labelPlayer2->setText(QString());
+
     chess = new QLabel**[15];
     for(int i = 0;i<SIZE;++i){
         chess[i] = new QLabel * [15];
@@ -62,10 +68,10 @@ GobangWindow::GobangWindow(QWidget *parent) :
             chess[i][j] = new QLabel(this);
             chess[i][j]->setGeometry(x[i]-CHESS_PIECE_SIZE/2,y[j]-CHESS_PIECE_SIZE/2,CHESS_PIECE_SIZE,CHESS_PIECE_SIZE);
             chess[i][j]->setPixmap(QPixmap());
-            //chess[i][j]->setPixmap(black_chess_piece_pixmap);
         }
     }
     last_mouse = nullptr;
+    last_chess = nullptr;
     setMouseTracking(true);
 
 }
@@ -112,13 +118,11 @@ void GobangWindow::paintEvent(QPaintEvent *) {
 }
 
 void GobangWindow::PickSide(int s) {
-
-    if(s){
-        broad->InitPlayer(-1);
+    broad->InitGobang(s);
+    if(s==-1){
         player1label->setPixmap(black_chess_piece_pixmap);
         player2label->setPixmap(white_chess_piece_pixmap);
     }else{
-        broad->InitPlayer(1);
         player1label->setPixmap(white_chess_piece_pixmap);
         player2label->setPixmap(black_chess_piece_pixmap);
     }
@@ -126,22 +130,94 @@ void GobangWindow::PickSide(int s) {
 }
 
 void GobangWindow::mouseMoveEvent(QMouseEvent *event){
-    auto p = event->pos();
-    int xi = (p.x() - 60) / 20;
-    int yj = p.y() / 20;
-    if(xi>=0 && xi < 30&&yj>=0 && yj < 30){
-        int i = xi / 2;
-        int j = yj / 2;
-        if(last_mouse){
-            last_mouse->setPixmap(QPixmap());
-        }
-        chess[i][j]->setPixmap(trans_white_pixmap);
-        last_mouse = chess[i][j];
-    }else{
-        if(last_mouse){
-            last_mouse->setPixmap(QPixmap());
-            last_mouse = nullptr;
+    if(broad->GetWinner()==1){
+        ui->labelPlayer1->setText(QString("WIN!"));
+    }else if(broad->GetWinner()==2){
+        ui->labelPlayer2->setText(QString("WIN!"));
+    }else if(broad->Full()){
+        ui->labelDraw->setText(QString("平局"));
+    }else {
+        auto p = event->pos();
+        int xi = (p.x() - 60) / 20;
+        int yj = p.y() / 20;
+        if (xi >= 0 && xi < 30 && yj >= 0 && yj < 30) {
+            int i = xi / 2;
+            int j = yj / 2;
+            if (last_mouse) {
+                if (last_chess->state == empty) {
+                    last_mouse->setPixmap(QPixmap());
+                }
+            }
+            if ((broad->GetPlayer1()->first && broad->GetPlayer1()->color == -1) ||
+                (!broad->GetPlayer1()->first && broad->GetPlayer1()->color == 1)) {
+                if (broad->GetChessPiece(i, j)->state == empty) {
+                    chess[i][j]->setPixmap(trans_black_pixmap);
+                }
+            } else {
+                if (broad->GetChessPiece(i, j)->state == empty) {
+                    chess[i][j]->setPixmap(trans_white_pixmap);
+                }
+
+            }
+            last_mouse = chess[i][j];
+            last_chess = broad->GetChessPiece(i, j);
+        } else {
+            if (last_mouse) {
+                if (last_chess->state == empty) {
+                    last_mouse->setPixmap(QPixmap());
+                }
+                last_mouse = nullptr;
+            }
         }
     }
+}
 
+void GobangWindow::mousePressEvent(QMouseEvent *event) {
+//    QWidget::mousePressEvent(event);
+    if(broad->GetWinner()==1){
+        ui->labelPlayer1->setText(QString("WIN!"));
+    }else if(broad->GetWinner()==2){
+        ui->labelPlayer2->setText(QString("WIN!"));
+    }else if(broad->Full()){
+        ui->labelDraw->setText(QString("平局"));
+    }else{
+        auto p = event->pos();
+        int xi = (p.x() - 60) / 20;
+        int yj = p.y() / 20;
+        if(xi>=0 && xi < 30&&yj>=0 && yj < 30){
+            int i = xi / 2;
+            int j = yj / 2;
+            auto press_chess = broad->Move(i, j);
+            if(press_chess->state == black){
+                chess[i][j]->setPixmap(black_chess_piece_pixmap);
+            } else if(press_chess->state == white){
+                chess[i][j]->setPixmap(white_chess_piece_pixmap);
+            }
+        }
+        if(broad->GetWinner()==1){
+            ui->labelPlayer1->setText(QString("WIN!"));
+        }else if(broad->GetWinner()==2){
+            ui->labelPlayer2->setText(QString("WIN!"));
+        }else if(broad->Full()){
+            ui->labelDraw->setText(QString("平局"));
+        }
+    }
+}
+
+void GobangWindow::Restart() {
+    auto pick_side_window = new PickSideWindow(this);
+    pick_side_window->setModal(true);
+    pick_side_window->show();
+    connect(pick_side_window,SIGNAL(SendSide(int)),this,SLOT(PickSide(int)));
+    ui->labelDraw->setText(QString());
+    ui->labelPlayer1->setText(QString());
+    ui->labelPlayer2->setText(QString());
+
+    for(int i = 0;i<SIZE;++i){
+        for(int j = 0;j<SIZE;++j){
+            chess[i][j]->setPixmap(QPixmap());
+        }
+    }
+    last_mouse = nullptr;
+    last_chess = nullptr;
 }

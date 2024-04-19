@@ -30,6 +30,7 @@ public:
 
     void paintEvent(QPaintEvent*) override;
 
+
 private:
     Ui::GobangWindow *ui;
     int* x;
@@ -43,11 +44,14 @@ private:
     QLabel* player1label;
     QLabel* player2label;
     Gobang* broad;
+    ChessPiece* last_chess{};
 private slots:
     void GobangBack();
     void OpenSetting();
     void PickSide(int);
+    void Restart();
     void mouseMoveEvent(QMouseEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 };
 
 

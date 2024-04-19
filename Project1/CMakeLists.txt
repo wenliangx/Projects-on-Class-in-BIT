@@ -15,7 +15,7 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(Project1 main.cpp
+add_executable(Project1 WIN32 main.cpp
         startwindow/startwindow.cpp
         startwindow/startwindow.h
         startwindow/startwindow.ui
@@ -36,6 +36,7 @@ target_link_libraries(Project1
         Qt::Gui
         Qt::Widgets
 )
+
 
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX)

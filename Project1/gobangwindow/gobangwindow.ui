@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>240</y>
+     <y>200</y>
      <width>77</width>
-     <height>121</height>
+     <height>211</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -31,6 +31,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="labelDraw">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="ButtonGobangToSetting">
       <property name="text">
        <string>设置</string>
@@ -38,6 +45,45 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="labelPlayer2">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>30</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelPlayer1">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>550</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonRestart">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>450</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>重新开始</string>
+   </property>
   </widget>
  </widget>
  <resources/>
